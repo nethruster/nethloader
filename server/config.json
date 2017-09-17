@@ -1,0 +1,9 @@
+{
+  "development": {
+    "database": {
+      "ip": "",
+      "username": "",
+      "password": ""
+    }
+  }
+}

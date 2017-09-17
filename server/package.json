@@ -2,9 +2,11 @@
   "name": "nethloader-server",
   "version": "0.1.0",
   "description": "Nethloader backend",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/index.js",
+    "build": "babel src -d dist",
+    "dev": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,15 @@
   "bugs": {
     "url": "https://github.com/nethruster/nethloader/issues"
   },
-  "homepage": "https://github.com/nethruster/nethloader#readme"
+  "homepage": "https://github.com/nethruster/nethloader#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "mysql2": "^1.4.2",
+    "sequelize": "^4.8.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "nodemon": "^1.12.1"
+  }
 }
