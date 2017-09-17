@@ -14,4 +14,8 @@ const config = (JSON.parse(
 
 config.env = env;
 
+if (process.env.PORT) {
+  config.port = process.env.PORT;
+}
+
 export default config;
