@@ -1,0 +1,19 @@
+{
+  "name": "nethloader-client",
+  "version": "0.1.0",
+  "description": "Nethloader frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nethruster/nethloader.git"
+  },
+  "author": "Nethruster <support@nethruster.com> (www.nethruster.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nethruster/nethloader/issues"
+  },
+  "homepage": "https://github.com/nethruster/nethloader#readme"
+}
