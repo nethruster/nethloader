@@ -1,7 +1,7 @@
 import express from 'express';
 import graphqlHTTP from 'express-graphql';
 
-var { buildSchema } = require('graphql');
+import { buildSchema } from 'graphql';
 
 import config from './utils/config';
 
