@@ -4,6 +4,8 @@ import {
   GraphQLString
 } from 'graphql';
 
+import User from './user';
+
 export default new GraphQLObjectType({
   name: 'Image',
   fields: () => ({
@@ -25,5 +27,11 @@ export default new GraphQLObjectType({
         return image.publicId
       }
     },
+    user: {
+      type: User,
+      resolve(image) {
+        return image.getUser();
+      }
+    }
   })
 });

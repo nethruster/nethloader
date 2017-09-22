@@ -1,9 +1,12 @@
 import {
   GraphQLObjectType,
+  GraphQLList,
   GraphQLInt,
   GraphQLString,
   GraphQLBoolean
 } from 'graphql';
+
+import Image from './image';
 
 export default new GraphQLObjectType({
   name: 'User',
@@ -36,6 +39,12 @@ export default new GraphQLObjectType({
       type: GraphQLBoolean,
       resolve(user) {
         return user.isAdmin
+      }
+    },
+    images: {
+      type: new GraphQLList(Image),
+      resolve(user) {
+        return user.getImages();
       }
     }
   })
