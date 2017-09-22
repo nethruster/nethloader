@@ -3,12 +3,15 @@
 import fs        from 'fs';
 import path      from 'path';
 import Sequelize from 'sequelize';
+import Faker from 'faker';
+import nanoid from 'nanoid';
 import config    from '../utils/config';
 
+const isDevelopment = config.env === "development"
 const basename  = path.basename(module.filename);
 var db          = {};
 
-var sequelize = new Sequelize(config.database.ip, config.database.username, config.database.password);
+var sequelize = new Sequelize(config.database);
 
 fs
   .readdirSync(__dirname)
@@ -28,5 +31,21 @@ Object.keys(db).forEach(modelName => {
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
+
+if (isDevelopment) {
+  sequelize.sync({force: true}).then(()=> {
+    for(let i = 0; i < 10; i++ ) {
+      db.User.create({
+        name: Faker.name.firstName(),
+        email: Faker.internet.email(),
+        apiKey: nanoid(24),
+        isAdmin: true
+      }).then(user => user.createImage({
+        extension: "jpg",
+        publicId: nanoid(10)
+      }));
+    }
+  })
+}
 
 export default db;

@@ -6,13 +6,11 @@ import { buildSchema } from 'graphql';
 import config from './utils/config';
 
 import schema from './graphql/schema';
-import root from './graphql/root';
 
 const app = express();
 
 app.use('/graphql', graphqlHTTP({
   schema: schema,
-  rootValue: root,
   graphiql: config.env !== "production"
 }));
 
