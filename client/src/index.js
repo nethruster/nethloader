@@ -1,11 +1,11 @@
 import { h, render } from 'preact';
 
-// this holds our rendered root element so we can re-render in response to HMR updates.
+// this holds our rendered root element so we can re-render in response to HMR updates
 let root;
 
-// Making our app's initialization a function means it's repeatable.
+// Making our app's initialization a function means it's repeatable
 function init() {
-    // HMR requires that this be a require()
+    // HMR requires this to be a require()
     let App = require('./components/app').default;
 
     // render the app and save the new root element:

@@ -1,6 +1,16 @@
 {
     "presets": [
-        "es2015"
+        [
+            "env",
+            {
+                "modules": false,
+                "targets": {
+                    "browsers": [
+                        "last 2 versions"
+                    ]
+                }
+            }
+        ]
     ],
     "plugins": [
         ["transform-react-jsx", { "pragma": "h" }]
