@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",
-    "start": "webpack-dev-server"
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "compression-webpack-plugin": "^1.0.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.7",
@@ -31,11 +32,12 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2",
-    "babel-preset-env": "^1.6.0"
+    "webpack-dev-server": "^2.8.2"
   },
   "dependencies": {
     "preact": "^8.2.5",
-    "preact-compat": "^3.17.0"
+    "preact-async-route": "^2.0.0",
+    "preact-compat": "^3.17.0",
+    "preact-router": "^2.5.7"
   }
 }

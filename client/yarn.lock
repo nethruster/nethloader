@@ -3677,6 +3677,10 @@ postcss@^6.0.1, postcss@^6.0.11, postcss@^6.0.2:
     source-map "^0.5.7"
     supports-color "^4.4.0"
 
+preact-async-route@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/preact-async-route/-/preact-async-route-2.0.0.tgz#5f438d66aabaa79cca119517d8bf8d82e83a9b8c"
+
 preact-compat@^3.17.0:
   version "3.17.0"
   resolved "https://registry.yarnpkg.com/preact-compat/-/preact-compat-3.17.0.tgz#528cfdfc301190c1a0f47567336be1f4be0266b3"
@@ -3692,6 +3696,10 @@ preact-render-to-string@^3.6.0:
   resolved "https://registry.yarnpkg.com/preact-render-to-string/-/preact-render-to-string-3.6.3.tgz#481d0d5bdac9192d3347557437d5cd00aa312043"
   dependencies:
     pretty-format "^3.5.1"
+
+preact-router@^2.5.7:
+  version "2.5.7"
+  resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-2.5.7.tgz#571fa585472fb2b9918e8610d8ef8526cf2ee263"
 
 preact-transition-group@^1.1.0:
   version "1.1.1"

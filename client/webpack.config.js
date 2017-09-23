@@ -5,13 +5,15 @@ const path = require('path'),
 
     isProduction = process.argv.indexOf('-p') !== -1; // Check if we are in production mode
 
-    const BUILD_DIR = path.resolve(__dirname, 'dist');
-    const APP_DIR = path.resolve(__dirname, 'src');
+const BUILD_DIR = path.resolve(__dirname, 'dist');
+const APP_DIR = path.resolve(__dirname, 'src');
 
 module.exports = {
-    entry: APP_DIR,
+    entry: {
+        'global': APP_DIR + '/index.js'
+    },
     output: {
-        path: path.join(__dirname, BUILD_DIR),
+        path: BUILD_DIR,
         filename: 'nethloader.js'
     },
     module: {
@@ -34,7 +36,7 @@ module.exports = {
     },
     devtool: isProduction ? '' : 'source-map',
     devServer: {
-        contentBase: path.join(__dirname, APP_DIR),
+        contentBase: APP_DIR,
         compress: true,
         historyApiFallback: true,
         stats: 'minimal',
