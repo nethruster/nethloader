@@ -1,5 +1,19 @@
 :global {
     :root {
         --base-pm: 8px;
+        --bg-blue-gradient: linear-gradient(to left top, #28a5f5, #1e87f0) 0 0 no-repeat;
+        --bg-shapes-layer: url(./../assets/img/section-background.svg) 50% 17vh no-repeat;
+
+        --blue-bg-text-color: rgba(255, 255, 255, 0.8);
+
+        --paper-background-color: #fff;
+        --paper-text-color: #222;
+
+        --button-default-bg: #fff;
+        --button-text-color-big: #1e87f0;
+        --button-text-color-transparent: rgba(255, 255, 255, 0.8);
+        --button-text-color-transparent--hover: #fff;
+        --button-border-color-transparent: #e5e5e5;
+        --button-border-color-transparent--hover: #fff;
     }
 }
