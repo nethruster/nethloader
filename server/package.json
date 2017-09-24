@@ -22,7 +22,6 @@
     "bcrypt": "^1.0.3",
     "express": "^4.15.4",
     "express-graphql": "^0.6.11",
-    "faker": "^4.1.0",
     "graphql": "^0.11.3",
     "jsonwebtoken": "^8.0.1",
     "mysql2": "^1.4.2",
@@ -32,6 +31,7 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "faker": "^4.1.0",
     "nodemon": "^1.12.1"
   }
 }
