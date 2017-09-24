@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
+const fs = require('fs');
+const path = require('path');
 
-import getEnv from "./get-env";
+const getEnv = require('./get-env');
 
 let env = getEnv();
 
@@ -18,4 +18,4 @@ if (process.env.PORT) {
   config.port = process.env.PORT;
 }
 
-export default config;
+module.exports = config;

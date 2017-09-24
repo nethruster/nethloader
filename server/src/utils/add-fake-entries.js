@@ -1,6 +1,6 @@
-import Faker from 'faker';
-import nanoid from 'nanoid';
-import bcrypt from 'bcrypt';
+const Faker = require('faker');
+const nanoid = require('nanoid');
+const bcrypt = require('bcrypt');
 
 module.exports = async function(db) {
   let passHash = await bcrypt.hash("1234", 12);
