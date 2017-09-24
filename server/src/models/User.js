@@ -4,6 +4,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.CHAR(10),
       primaryKey: true
     },
+    password: DataTypes.STRING,
     email: {
       type: DataTypes.STRING(45),
       validate: {
