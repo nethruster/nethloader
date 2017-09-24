@@ -16,8 +16,8 @@ export default class Home extends Component {
                     <p class={`${style.homeText} ta-c`}>This domain is using Nethloader, a <br /> self hosted media sharing service.</p>
                 </div>
                 <div class={`${style.homeButtons} flex flex-full-center flex-sa`}>
-                    <a href="" rel="noopener" target="_blank"><Button big text="More info"/></a>
-                    <a href="https://github.com/nethruster/nethloader" rel="noopener" target="_blank"><Button big transparent text="Github"/></a>
+                    <a href="" rel="noopener" target="_blank"><Button big round text="More info"/></a>
+                    <a href="https://github.com/nethruster/nethloader" rel="noopener" target="_blank"><Button big round transparent text="Github"/></a>
                 </div>
                 <div class={`${style.homeLinks}`}>
                     <p class="flex flex-full-center">Version 0.1.0&nbsp;&nbsp;&nbsp;&nbsp;<Icon iconName="twitter" />&nbsp;<a href="https://twitter.com/nethruster" rel="noopener" target="_blank">@nethruster</a>&nbsp;&nbsp;&nbsp;&nbsp;<Link href="/login">Login</Link></p>

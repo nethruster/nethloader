@@ -6,10 +6,10 @@ export default class Button extends Component {
     render() {
         return (
             <div
-            class={`${style.Button}
-                    ${this.props.noRound ? style.ButtonNoRound : ''}
-                    ${this.props.big ? style.ButtonBig : ''}
-                    ${this.props.transparent ? style.ButtonTransparent : ''}
+            class={`${style.button}
+                    ${this.props.round ? style.buttonRound : ''}
+                    ${this.props.big ? style.buttonBig : ''}
+                    ${this.props.transparent ? style.buttonTransparent : ''}
                     flex flex-full-center`}
             tabindex="0">
                 {this.props.text}

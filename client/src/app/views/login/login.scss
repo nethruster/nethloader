@@ -1,0 +1,12 @@
+:local {
+    .login {
+        background: var(--bg-shapes-layer), var(--bg-blue-gradient);
+        min-height: 100vh;
+        flex: 1;
+        color: var(--blue-bg-text-color);
+
+        h1 {
+            font-size: 2em;
+        }
+    }
+}
