@@ -9,12 +9,11 @@ const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname, 'src');
 
 module.exports = {
-    entry: {
-        'global': APP_DIR + '/index.js'
-    },
+    entry:  APP_DIR + '/index.js',
     output: {
         path: BUILD_DIR,
-        filename: 'nethloader.js'
+        filename: '[name].js',
+        chunkFilename: '[name].js',
     },
     module: {
         loaders: [
@@ -31,7 +30,14 @@ module.exports = {
                     'postcss-loader',
                     'sass-loader'
                 ]
-            }
+            },
+            {
+              test: /\.(png|jpg|jpeg|gif|svg)$/,
+              loader: 'file-loader',
+              options: {
+                name: 'assets/[name].[ext]?[hash]',
+              },
+            },
         ]
     },
     devtool: isProduction ? '' : 'source-map',

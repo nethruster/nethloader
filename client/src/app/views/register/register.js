@@ -6,7 +6,7 @@ export default class Register extends Component {
     render() {
         return (
             <div>
-                <h1>Register View</h1>
+                Register
             </div>
         );
     }
