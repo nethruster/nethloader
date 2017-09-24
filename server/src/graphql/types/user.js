@@ -1,14 +1,16 @@
-import {
+const {
   GraphQLObjectType,
   GraphQLList,
   GraphQLInt,
   GraphQLString,
   GraphQLBoolean
-} from 'graphql';
+} = require('graphql');
 
-import Image from './image';
+const db = require('../../models');
 
-export default new GraphQLObjectType({
+const Image = require('./image');
+
+const type = new GraphQLObjectType({
   name: 'User',
   fields: () => ({
     id: {
@@ -42,10 +44,36 @@ export default new GraphQLObjectType({
       }
     },
     images: {
-      type: new GraphQLList(Image),
+      type: new GraphQLList(Image.type),
       resolve(user) {
         return user.getImages();
       }
     }
   })
 });
+
+const field = {
+  type: new GraphQLList(type),
+  args: {
+    id: {
+      type: GraphQLString
+    },
+    email: {
+      type: GraphQLString
+    },
+    apiKey: {
+      type: GraphQLString
+    },
+    isAdmin: {
+      type: GraphQLBoolean
+    }
+  },
+  resolve(root, args) {
+    return db.User.findAll({ where: args });
+  }
+};
+
+module.exports = {
+  type,
+  field
+}

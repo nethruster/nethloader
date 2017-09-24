@@ -1,7 +1,41 @@
-import {GraphQLSchema} from 'graphql';
+const {makeExecutableSchema} = require('graphql-tools');
 
-import Query from './query';
+const resolvers = require('./resolvers');
 
-export default new GraphQLSchema({
-  query: Query
-});
+const typeDefs = `
+type User {
+  id: String
+  name: String
+  email: String
+  apiKey: String
+  isAdmin: Boolean
+  images: [Image]
+  createdAt: String
+}
+type Image {
+  id: String
+  extension: String
+  user: User
+  createdAt: String
+}
+type Query {
+  users(
+    id: String,
+    name: String,
+    email: String,
+    apiKey: String,
+    isAdmin: Boolean
+  ): [User]
+  user(id: String, email: String): User
+  images(
+    id: String,
+    extension: String
+  ): [Image]
+  image(id: String!): Image
+}
+`;
+
+module.exports = makeExecutableSchema({
+  typeDefs,
+  resolvers
+})

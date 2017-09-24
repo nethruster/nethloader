@@ -34,4 +34,4 @@ if (isDevelopment) {
   (require('../utils/add-fake-entries'))(db).catch(err => {throw err;});
 }
 
-export default db;
+module.exports = db;
