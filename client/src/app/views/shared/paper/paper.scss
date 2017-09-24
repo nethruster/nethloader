@@ -1,0 +1,13 @@
+:global {
+    .paper {
+        background-color: var(--paper-background-color);
+        color: var(--paper-text-color);
+        font-weight: 300;
+        width: 100%;
+        padding: calc(var(--base-pm) * 4) calc(var(--base-pm) * 4);
+
+        &-small {
+            max-width: 650px;
+        }
+    }
+}
