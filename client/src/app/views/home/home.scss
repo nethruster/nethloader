@@ -1,0 +1,38 @@
+:local {
+    .Home {
+        background: url(../../../assets/img/section-background.svg) 50% 17vh no-repeat, linear-gradient(to left top, #28a5f5, #1e87f0) 0 0 no-repeat;
+        min-height: 100vh;
+        flex: 1;
+        color: rgba(255,255,255,0.8);
+
+
+        &Links {
+            font-weight: 300;
+            font-size: .9em;
+            margin: calc(var(--base-pm) * 4) calc(var(--base-pm) * 2);
+        }
+
+        svg {
+            width: 22px;
+        }
+
+        &Text {
+            font-size: 1.5em;
+            font-weight: 300;
+            margin-bottom: calc(var(--base-pm) * 2);
+            padding: var(--base-pm);
+        }
+
+        &Buttons {
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 350px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        br {
+            display: none;
+        }
+    }
+}

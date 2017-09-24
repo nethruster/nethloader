@@ -31,7 +31,14 @@ module.exports = {
                     'postcss-loader',
                     'sass-loader'
                 ]
-            }
+            },
+            {
+              test: /\.(png|jpg|jpeg|gif|svg)$/,
+              loader: 'file-loader',
+              options: {
+                name: 'assets/[name].[ext]?[hash]',
+              },
+            },
         ]
     },
     devtool: isProduction ? '' : 'source-map',

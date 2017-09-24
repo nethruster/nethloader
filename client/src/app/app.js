@@ -1,8 +1,8 @@
 import { h, Component } from 'preact';
 import Router from 'preact-router';
-import AsyncRoute from 'preact-async-route';
 
 import Home from './views/home/home.js';
+import Register from './views/register/register.js';
 
 import style from './app.scss';
 
@@ -11,11 +11,7 @@ export default class App extends Component {
         return (
             <Router>
                 <Home path="/" />
-                <AsyncRoute
-                    path="/register"
-                    component={ () => import('./views/register/register.js').then(module => module.default) }
-                    loading={ () => <div>loading...</div> }
-                />
+                <Register path="/register" />
             </Router>
         );
     }

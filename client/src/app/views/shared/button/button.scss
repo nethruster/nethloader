@@ -1,0 +1,46 @@
+:local {
+    .Button {
+        background-color: #fff;
+        color: inherit;
+        text-transform: none;
+        display: inline-block;
+        padding: 0 calc(var(--base-pm) * 4);
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: .1s ease-in-out;
+        transition-property: color, background-color, border-color;
+        border-radius: 500px;
+        cursor: pointer;
+        margin: calc(var(--base-pm) * 3) 0;
+
+        &NoRound {
+            border-radius: 4px;
+        }
+
+        &Big {
+            padding: 0 15px;
+            line-height: 38px;
+            padding: 0 calc(var(--base-pm) * 5);
+            text-transform: uppercase;
+            color: #1e87f0;
+
+            &:hover {
+                box-shadow: 0 10px 40px #1e87f0;
+            }
+        }
+
+        &Transparent {
+            border: 1px solid #e5e5e5;
+            color: rgba(255, 255, 255, 0.8);
+            border-color: rgba(255, 255, 255, 0.6);
+            background-color: transparent;
+
+            &:hover {
+                box-shadow: none;
+                color: #fff;
+                border-color: #fff;
+            }
+        }
+    }
+}
