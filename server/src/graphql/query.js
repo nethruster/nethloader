@@ -18,7 +18,7 @@ export default new GraphQLObjectType({
       type: new GraphQLList(User),
       args: {
         id: {
-          type: GraphQLInt
+          type: GraphQLString
         },
         email: {
           type: GraphQLString
@@ -38,7 +38,7 @@ export default new GraphQLObjectType({
       type: new GraphQLList(Image),
       args: {
         id: {
-          type: GraphQLInt
+          type: GraphQLString
         },
         publicId: {
           type: GraphQLString

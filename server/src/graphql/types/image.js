@@ -10,7 +10,7 @@ export default new GraphQLObjectType({
   name: 'Image',
   fields: () => ({
     id: {
-      type: GraphQLInt,
+      type: GraphQLString,
       resolve(image) {
         return image.id
       }
@@ -19,12 +19,6 @@ export default new GraphQLObjectType({
       type: GraphQLString,
       resolve(image) {
         return image.extension
-      }
-    },
-    publicId: {
-      type: GraphQLString,
-      resolve(image) {
-        return image.publicId
       }
     },
     user: {

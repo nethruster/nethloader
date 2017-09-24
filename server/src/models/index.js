@@ -36,13 +36,14 @@ if (isDevelopment) {
   sequelize.sync({force: true}).then(()=> {
     for(let i = 0; i < 10; i++ ) {
       db.User.create({
+        id: nanoid(10),
         name: Faker.name.firstName(),
         email: Faker.internet.email(),
         apiKey: nanoid(24),
         isAdmin: true
       }).then(user => user.createImage({
-        extension: "jpg",
-        publicId: nanoid(10)
+        id: nanoid(10),
+        extension: "jpg"
       }));
     }
   })

@@ -12,7 +12,7 @@ export default new GraphQLObjectType({
   name: 'User',
   fields: () => ({
     id: {
-      type: GraphQLInt,
+      type: GraphQLString,
       resolve(user) {
         return user.id
       }

@@ -1,5 +1,9 @@
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define('User', {
+    id: {
+      type: DataTypes.CHAR(10),
+      primaryKey: true
+    },
     email: {
       type: DataTypes.STRING(45),
       validate: {
