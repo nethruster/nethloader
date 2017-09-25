@@ -13,6 +13,9 @@
         margin: calc(var(--base-pm) * 3) 0;
         cursor: pointer;
         width: 100%;
+        -webkit-appearance: none;
+        appearance: none;
+        border: 0;
 
         &Round {
             border-radius: 500px;

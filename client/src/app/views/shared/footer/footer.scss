@@ -1,0 +1,13 @@
+:local {
+    .footer {
+        p {
+            font-weight: 300;
+            font-size: .9em;
+            margin: calc(var(--base-pm) * 4) calc(var(--base-pm) * 2);
+        }
+
+        svg {
+            width: 18px;
+        }
+    }
+}

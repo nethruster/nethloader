@@ -3,7 +3,6 @@ import Router from 'preact-router';
 import AsyncRoute from 'preact-async-route';
 
 import Home from './views/home/home.js';
-
 import Loading from './views/shared/view-loading/view-loading.js';
 
 import style from './app.scss';

@@ -8,5 +8,20 @@
         h1 {
             font-size: 2em;
         }
+
+        &AltLinks {
+            width: 70%;
+
+            a {
+                font-size: .9em;
+                opacity: .5;
+                transition: .2s ease-in-out;
+                transition-property: opacity;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
