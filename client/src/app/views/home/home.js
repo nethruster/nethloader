@@ -1,5 +1,4 @@
 import { h, Component } from 'preact';
-import { Link } from 'preact-router/match';
 
 import Button from '../shared/button/button.js';
 import Logo from '../shared/logo/logo.js';

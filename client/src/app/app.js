@@ -1,26 +1,32 @@
 import { h, Component } from 'preact';
-import Router from 'preact-router';
-import AsyncRoute from 'preact-async-route';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 
 import Loading from './views/shared/view-loading/view-loading.js';
+import asyncComponent from './asyncComponent';
+
+const Home = asyncComponent(() => import(/* webpackChunkName: "home" */'./views/home/home.js')
+                .then(module => module.default));
+
+const Login = asyncComponent(() => import(/* webpackChunkName: "login" */'./views/login/login.js')
+                .then(module => module.default));
+
+const MediaView = asyncComponent(() => import(/* webpackChunkName: "media-view" */'./views/media-view/media-view.js')
+                .then(module => module.default));
 
 import style from './app.scss';
 
 export default class App extends Component {
     render() {
         return (
-            <Router>
-                <AsyncRoute
-                    path="/"
-                    getComponent={ () => import(/* webpackChunkName: "home" */'./views/home/home.js').then(module => module.default) }
-                    loading={ () => <Loading /> }
-                    />
-                <AsyncRoute
-                    path="/login"
-                    getComponent={ () => import(/* webpackChunkName: "login" */'./views/login/login.js').then(module => module.default) }
-                    loading={ () => <Loading /> }
-                    />
-            </Router>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path='/' component={Home} />
+
+                    <Route exact path='/login' component={Login} />
+
+                    <Route path='/:id' component={MediaView} />
+                </Switch>
+            </BrowserRouter>
         );
     }
 }

@@ -1,13 +1,12 @@
 import { h, Component } from 'preact';
-import { route } from 'preact-router';
 
 import style from './media-view.scss';
 
 export default class MediaView extends Component {
-    render({id}) {
+    render({ match }) {
         return (
             <div>
-                <h1>Media standalone view {String(id == '')}</h1>
+                <h1>Media standalone view {match.params.id}</h1>
             </div>
         );
     }
