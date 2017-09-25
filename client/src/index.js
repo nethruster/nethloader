@@ -1,4 +1,5 @@
 import { h, render } from 'preact';
+import { initDevTools } from 'preact/devtools';
 
 // this holds our rendered root element so we can re-render in response to HMR updates
 let root;
