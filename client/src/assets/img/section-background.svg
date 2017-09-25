@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Ebene_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1622px" height="626px" viewBox="0 0 1622 626" enable-background="new 0 0 1622 626" xml:space="preserve">
-<polygon opacity="0.2" fill="#FFFFFF" enable-background="new    " points="1528,220.31 1558,229.98 1537.33,251.31 "/>
-<circle opacity="0.2" fill="#FFFFFF" enable-background="new    " cx="1418.75" cy="162.64" r="14"/>
-<circle opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" enable-background="new    " cx="1443.92" cy="399.56" r="6.92"/>
-<polygon opacity="0.2" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" enable-background="new    " points="
-	181.04,116.98 209.46,111.5 199.51,138.29 "/>
-<polygon opacity="0.2" fill="#FFFFFF" enable-background="new    " points="212.18,529.77 229.68,539.33 212.18,549.86 "/>
-<circle opacity="0.2" fill="#FFFFFF" enable-background="new    " cx="285.58" cy="458.48" r="9.83"/>
-<polygon opacity="0.2" fill="#FFFFFF" points="1269.17,497.17 1316.5,431.83 1381,478 1334.83,542.83 "/>
-<polygon opacity="0.2" fill="#FFFFFF" points="62.75,250.25 116.25,261.75 105.12,315.46 50.75,304.5 "/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1622 626"><path fill="#FFF" d="M1528 220.31l30 9.67-20.67 21.33" opacity=".2"/><circle cx="1418.75" cy="162.64" r="14" fill="#FFF" opacity=".2"/><circle cx="1443.92" cy="399.56" r="6.92" fill="none" stroke="#FFF" stroke-width="3" stroke-miterlimit="10" opacity=".2"/><path fill="none" stroke="#FFF" stroke-width="3" stroke-miterlimit="10" d="M181.04 116.98l28.42-5.48-9.95 26.79z" opacity=".2"/><path fill="#FFF" d="M212.18 529.77l17.5 9.56-17.5 10.53" opacity=".2"/><circle cx="285.58" cy="458.48" r="9.83" fill="#FFF" opacity=".2"/><path fill="#FFF" d="M1269.17 497.17l47.33-65.34L1381 478l-46.17 64.83M62.75 250.25l53.5 11.5-11.13 53.71-54.37-10.96" opacity=".2"/></svg>

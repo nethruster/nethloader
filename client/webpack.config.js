@@ -9,16 +9,17 @@ const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname, 'src');
 
 module.exports = {
-    entry:  APP_DIR + '/index.js',
+    entry: APP_DIR + '/index.js',
     output: {
         path: BUILD_DIR,
+        publicPath: '/',
         filename: '[name].js',
         chunkFilename: '[name].js'
     },
     module: {
         loaders: [
             {
-                test: /\.js/,
+                test: /\.js$/,
                 include: APP_DIR,
                 loader: 'babel-loader'
             },
@@ -32,7 +33,7 @@ module.exports = {
                 ]
             },
             {
-              test: /\.(png|jpg|jpeg|gif|svg)$/,
+                test: /\.(png|jpg|jpeg|gif|svg)$/,
                 loader: 'file-loader',
                 options: {
                     name: 'assets/img/[name].[ext]?[hash]'
@@ -56,19 +57,25 @@ module.exports = {
         }
     },
     plugins: [
-      isProduction ? new CompressionPlugin() : new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoEmitOnErrorsPlugin(),
-      new HtmlWebpackPlugin({
-        minify: {
-          collapseWhitespace: true
-        },
-        hash: true,
-        template: APP_DIR + '/index.html'
-      }),
-      new webpack.DefinePlugin({
-        'process.env': {
-          'NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('development')
-        }
-      })
+        isProduction ? new CompressionPlugin({
+            asset: "[path].gz[query]",
+            algorithm: "gzip",
+            test: /\.(js|svg)$/,
+            threshold: 0,
+            minRatio: 1.0
+        }) : new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
+        new HtmlWebpackPlugin({
+            minify: {
+                collapseWhitespace: true
+            },
+            hash: true,
+            template: APP_DIR + '/index.html'
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('development')
+            }
+        })
     ]
 };
