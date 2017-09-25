@@ -1,35 +1,35 @@
 :global {
     .input-container {
-        margin: calc(var(--base-pm) * 2) 0;
         width: 100%;
+
+        margin: calc(var(--base-pm) * 2) 0;
     }
 }
 
 :local {
     .inputClass {
         -webkit-appearance: none;
-        height: 40px;
-        vertical-align: middle;
         display: inline-block;
         max-width: 100%;
         width: 100%;
-        border: 0 none;
+        height: 40px;
+        vertical-align: middle;
+
         padding: 0 var(--base-pm);
-        background: #fff;
-        color: #666;
-        border: 1px solid #e5e5e5;
+
+        background-color: var(--input-bg-color--default);
+        color: var(--input-text-color-defalt);
+        border: 1px solid var(--input-border-color-default);
+
         transition: .2s ease-in-out;
         transition-property: color, background-color, border;
 
         &:focus {
             outline: none;
-            background-color: #fff;
-            color: #666;
-            border-color: #1e87f0;
+
+            border-color: var(--input-border-color-default--focus);
         }
 
-        &:valid {
-            border-color: #00c853;
-        }
+        &:valid:not([noValidationStyle]) { border-color: var(--input-border-color-default--valid); }
     }
 }

@@ -26,13 +26,9 @@
 
     /* HTML5 display-role reset for older browsers */
     article, aside, details, figcaption, figure,
-    footer, header, hgroup, menu, nav, section {
-        display: block;
-    }
+    footer, header, hgroup, menu, nav, section { display: block; }
 
-    a, area, button, input, label, select, summary, textarea {
-        touch-action: manipulation;
-    }
+    a, area, button, input, label, select, summary, textarea { touch-action: manipulation; }
 
     a {
         text-decoration: none;
@@ -64,15 +60,11 @@
         font-family: Roboto, 'Noto Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 
-    ol, ul {
-        list-style: none;
-    }
+    ol, ul { list-style: none; }
 
     *,
     *:before,
-    *:after {
-        box-sizing: inherit;
-    }
+    *:after { box-sizing: inherit; }
 
     img {
         border-style: none;
@@ -80,9 +72,7 @@
         height: auto;
     }
 
-    svg:not(:root) {
-        overflow: hidden;
-    }
+    svg:not(:root) { overflow: hidden; }
 
     button::-moz-focus-inner,
     [type="button"]::-moz-focus-inner,
@@ -95,9 +85,7 @@
     button:-moz-focusring,
     [type="button"]:-moz-focusring,
     [type="reset"]:-moz-focusring,
-    [type="submit"]:-moz-focusring {
-        outline: 1px dotted ButtonText;
-    }
+    [type="submit"]:-moz-focusring { outline: 1px dotted ButtonText; }
 
     [type="search"] {
         -webkit-appearance: textfield;
@@ -105,13 +93,9 @@
     }
 
     [type="search"]::-webkit-search-cancel-button,
-    [type="search"]::-webkit-search-decoration {
-        -webkit-appearance: none;
-    }
+    [type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
-    [hidden] {
-        display: none;
-    }
+    [hidden] { display: none; }
 
     #nethloader {
         width: 100vw;

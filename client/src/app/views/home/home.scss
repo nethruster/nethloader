@@ -1,13 +1,15 @@
 :local {
     .home {
-        background: var(--bg-shapes-layer), var(--bg-blue-gradient);
-        min-height: 100vh;
         flex: 1;
+        min-height: 100vh;
+
+        background: var(--bg-shapes-layer), var(--bg-blue-gradient);
         color: var(--blue-bg-text-color);
 
         &Text {
             font-size: 1.5em;
             font-weight: 300;
+
             margin-bottom: calc(var(--base-pm) * 2);
             padding: var(--base-pm);
         }
@@ -19,9 +21,9 @@
         }
     }
 
+    .logo { height: 220px; }
+
     @media (max-width: 640px) {
-        br {
-            display: none;
-        }
+        br { display: none; }
     }
 }

@@ -29,8 +29,8 @@ export default class LoginForm extends Component {
     render() {
         return (
             <form class={`${style.form} flex flex-full-center flex-dc`} onSubmit={this.handleSubmit}>
-                <FormInput inputId="email" inputType="email" inputLabel="Email" changeHandler={this.handleChange} required />
-                <FormInput inputId="password" inputType="password" inputLabel="Password" changeHandler={this.handleChange} required />
+                <FormInput inputId="email" inputType="email" inputLabel="Email" changeHandler={this.handleChange} required noValidationStyle />
+                <FormInput inputId="password" inputType="password" inputLabel="Password" changeHandler={this.handleChange} required noValidationStyle />
                 <Button text="Login" />
             </form>
         );

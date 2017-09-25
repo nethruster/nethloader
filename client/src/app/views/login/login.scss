@@ -1,26 +1,25 @@
 :local {
     .login {
-        background: var(--bg-shapes-layer), var(--bg-blue-gradient);
-        min-height: 100vh;
         flex: 1;
+        min-height: 100vh;
+
+        background: var(--bg-shapes-layer), var(--bg-blue-gradient);
         color: var(--blue-bg-text-color);
 
-        h1 {
-            font-size: 2em;
-        }
+        h1 { font-size: 2em; }
 
         &AltLinks {
             width: 70%;
 
             a {
                 font-size: .9em;
-                opacity: .5;
+
+                opacity: .65;
+
                 transition: .2s ease-in-out;
                 transition-property: opacity;
 
-                &:hover {
-                    opacity: 1;
-                }
+                &:hover { opacity: 1; }
             }
         }
     }

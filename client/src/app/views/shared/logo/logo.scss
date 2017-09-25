@@ -1,6 +1,7 @@
-:local {
+:global {
     .logo {
         max-width: 120px;
+
         margin-bottom: calc(var(--base-pm) * 2);
     }
 }

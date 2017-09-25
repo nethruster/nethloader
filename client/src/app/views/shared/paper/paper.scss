@@ -1,17 +1,15 @@
 :global {
     .paper {
+        width: 100%;
         background-color: var(--paper-background-color);
         color: var(--paper-text-color);
-        font-weight: 300;
-        width: 100%;
+
         padding: calc(var(--base-pm) * 4) calc(var(--base-pm) * 4);
 
-        &-small {
-            max-width: 650px;
-        }
+        font-weight: 300;
 
-        &-shadow-1 {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
+        &-small { max-width: 650px; }
+
+        &-shadow-1 { box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
     }
 }

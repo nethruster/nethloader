@@ -13,12 +13,12 @@ module.exports = {
     output: {
         path: BUILD_DIR,
         filename: '[name].js',
-        chunkFilename: '[name].js',
+        chunkFilename: '[name].js'
     },
     module: {
         loaders: [
             {
-                test: /\.jsx?/i,
+                test: /\.js/,
                 include: APP_DIR,
                 loader: 'babel-loader'
             },
@@ -33,11 +33,11 @@ module.exports = {
             },
             {
               test: /\.(png|jpg|jpeg|gif|svg)$/,
-              loader: 'file-loader',
-              options: {
-                name: 'assets/[name].[ext]?[hash]',
-              },
-            },
+                loader: 'file-loader',
+                options: {
+                    name: 'assets/img/[name].[ext]?[hash]'
+                }
+            }
         ]
     },
     devtool: isProduction ? '' : 'source-map',
@@ -60,7 +60,7 @@ module.exports = {
       new webpack.NoEmitOnErrorsPlugin(),
       new HtmlWebpackPlugin({
         minify: {
-          collapseWhitespace: true,
+          collapseWhitespace: true
         },
         hash: true,
         template: APP_DIR + '/index.html'
@@ -70,5 +70,5 @@ module.exports = {
           'NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('development')
         }
       })
-    ],
+    ]
 };

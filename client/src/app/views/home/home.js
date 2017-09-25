@@ -13,7 +13,7 @@ export default class Home extends Component {
         return (
             <div class={`${style.home} flex flex-full-center flex-dc`}>
                 <div class="flex flex-cross-center flex-dc">
-                    <Logo />
+                    <Logo customClass={style.logo} />
                     <p class={`${style.homeText} ta-c`}>This domain is using Nethloader, a <br /> self hosted media sharing service.</p>
                 </div>
                 <div class={`${style.homeButtons} flex flex-full-center flex-sa`}>
