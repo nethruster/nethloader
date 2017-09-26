@@ -1,0 +1,24 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch nodemon",
+      "protocol": "inspector",
+      "runtimeExecutable": "nodemon",
+      "runtimeArgs": [
+          "--inspect=9222"
+      ],
+      "program": "${workspaceRoot}/src/index.js",
+      "port": 9222,
+      "restart": true,
+      "env": {
+          "BABEL_DISABLE_CACHE": "1",
+          "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
+  }
+  ]
+}
