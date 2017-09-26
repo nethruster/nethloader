@@ -1,3 +1,5 @@
+const nanoid = require('nanoid');
+
 module.exports = (sequelize, DataTypes) => {
   const Images = sequelize.define('Image', {
     id: {
@@ -5,7 +7,15 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true
     },
     extension: {
-      type: DataTypes.STRING(5)
+      type: DataTypes.STRING(5),
+      allowNull: false
+    }
+  },
+  {
+    hooks: {
+      beforeValidate(image, options) {
+        image.id = nanoid(10)
+      }
     }
   });
 
