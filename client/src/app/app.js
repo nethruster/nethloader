@@ -1,5 +1,5 @@
 import { h, Component } from 'preact';
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import Loading from './views/shared/view-loading/view-loading.js';
 import asyncComponent from './asyncComponent';
