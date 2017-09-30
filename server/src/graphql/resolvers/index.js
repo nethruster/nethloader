@@ -1,5 +1,6 @@
 module.exports = {
   User: require('./getters/user'),
   Image: require('./getters/image'),
-  Query: require('./getters/query')
+  Query: require('./getters/query'),
+  Mutation: require('./mutations/mutation')
 }
