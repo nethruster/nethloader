@@ -9,7 +9,14 @@ const BUILD_DIR = path.resolve(__dirname, 'dist');
 const APP_DIR = path.resolve(__dirname, 'src');
 
 module.exports = {
-    entry: APP_DIR + '/index.js',
+    entry: {
+        'main': APP_DIR + '/index.js',
+        'vendor': [
+            'preact',
+            'preact-compat',
+            'react-router-dom'
+        ]
+    },
     output: {
         path: BUILD_DIR,
         publicPath: '/',
@@ -74,6 +81,7 @@ module.exports = {
             'process.env': {
                 'NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('development')
             }
-        })
+        }),
+        new webpack.optimize.CommonsChunkPlugin("vendor")
     ]
 };

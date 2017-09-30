@@ -1,0 +1,12 @@
+:local {
+    .mediaView {
+        flex: 1;
+
+        &Image {
+            max-width: 950px;
+            padding: var(--base-pm);
+            background-color: var(--media-view-image-background-color);
+            border: 0 solid var(--media-view-image-border-color);
+        }
+    }
+}

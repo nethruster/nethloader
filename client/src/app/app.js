@@ -24,7 +24,7 @@ export default class App extends Component {
 
                     <Route
                         path='/:id'
-                        component={ asyncComponent(() => import(/* webpackChunkName: "media-view" */'./views/media-view/media-view.js')
+                        component={ asyncComponent(() => import(/* webpackChunkName: "content" */'./views/shared/content/content.js')
                                     .then(module => module.default)) } />
                 </Switch>
             </BrowserRouter>

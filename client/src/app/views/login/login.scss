@@ -6,8 +6,6 @@
         background: var(--bg-shapes-layer), var(--bg-blue-gradient);
         color: var(--blue-bg-text-color);
 
-        h1 { font-size: 2em; }
-
         &AltLinks {
             width: 70%;
 
@@ -22,5 +20,7 @@
                 &:hover { opacity: 1; }
             }
         }
+
+        h1 { font-size: 2em; }
     }
 }
