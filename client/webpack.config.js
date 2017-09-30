@@ -58,11 +58,9 @@ module.exports = {
     },
     plugins: [
         isProduction ? new CompressionPlugin({
-            asset: "[path].gz[query]",
             algorithm: "gzip",
-            test: /\.(js|svg)$/,
-            threshold: 0,
-            minRatio: 1.0
+            test: /\.(js|css|json|svg|png|jpeg)$/,
+            minRatio: 0.8
         }) : new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
         new HtmlWebpackPlugin({

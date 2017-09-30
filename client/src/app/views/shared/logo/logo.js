@@ -8,7 +8,7 @@ import svgLogo from '../../../../assets/img/logo.svg';
 export default class Logo extends Component {
     render() {
         return (
-            <div class={`logo ${this.props.customClass || '' }`}>
+            <div class={ `logo ${this.props.customClass || '' }` }>
                 <img src='../../../../assets/img/logo.svg' alt="Nethloader Logo" />
             </div>
         );

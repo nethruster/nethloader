@@ -12,7 +12,7 @@ export default class Button extends Component {
         };
 
         return (
-          <svg style={iconStyle} viewBox="0 0 24 24"><use xlinkHref={`../../../../assets/img/icons.svg#${this.props.iconName}`}></use></svg>
+          <svg style={ iconStyle } viewBox="0 0 24 24"><use xlinkHref={`../../../../assets/img/icons.svg#${ this.props.iconName }`}></use></svg>
         );
     }
 }

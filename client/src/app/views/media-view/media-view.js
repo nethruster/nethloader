@@ -9,7 +9,7 @@ export default class MediaView extends Component {
         return (
             <div>
                 <HeaderNav />
-                <h1>Media standalone view {match.params.id}</h1>
+                <h1>Media standalone view { match.params.id }</h1>
             </div>
         );
     }
