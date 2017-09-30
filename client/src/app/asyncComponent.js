@@ -1,5 +1,7 @@
 import { h, Component } from 'preact';
 
+import ViewLoading from './views/shared/view-loading/view-loading.js';
+
 // Huge thanks to Hassan Ali on https://hackernoon.com/code-splitting-for-react-router-with-webpack-and-hmr-bb509968e86f
 
 export default (loader, collection) => (
@@ -26,6 +28,8 @@ export default (loader, collection) => (
                 return (
                     <this.state.Component { ...this.props } { ...collection } />
                 )
+            } else {
+                return <ViewLoading />
             }
 
             return null;

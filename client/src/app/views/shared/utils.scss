@@ -12,7 +12,9 @@
     // Flex direction
     .flex-dc { flex-direction: column; }
 
-    .flex-full-center { justify-content: center;     align-items: center;
+    .flex-full-center {
+        justify-content: center;
+        align-items: center;
     }
 
     // Center within the main axis
