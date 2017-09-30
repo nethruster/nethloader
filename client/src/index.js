@@ -1,20 +1,8 @@
 import { h, render } from 'preact';
-import { initDevTools } from 'preact/devtools';
+// import { initDevTools } from 'preact/devtools';
 
-// this holds our rendered root element so we can re-render in response to HMR updates
-let root;
+import asyncComponent from './app/asyncComponent.js';
 
-// Making our app's initialization a function means it's repeatable
-function init() {
-    // HMR requires this to be a require()
-    let App = require('./app/app.js').default;
+let App = asyncComponent(() => import(/* webpackChunkName: "app" */'./app/app.js').then(module => module.default));
 
-    // render the app and save the new root element:
-    root = render(<App />, document.getElementById('nethloader'), root);
-}
-
-// initial render
-init();
-
-// If this is webpack-dev-server, set up HMR
-if (module.hot) module.hot.accept('./', init);
+render(<App />, document.getElementById('nethloader'));

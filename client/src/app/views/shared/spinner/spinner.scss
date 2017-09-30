@@ -1,10 +1,10 @@
 :global {
-    @keyframes spinner-rotate{
+    @keyframes spinner-rotate {
         0% { transform:rotate(0deg); }
         100% { transform:rotate(270deg); }
     }
 
-    @keyframes spinner-dash{
+    @keyframes spinner-dash {
         0% { stroke-dashoffset:88px; }
         50% {
             stroke-dashoffset:22px;
@@ -30,6 +30,6 @@
         animation: spinner-dash 1.4s ease-in-out infinite;
         stroke-width: 1;
         stroke-linecap: round;
-        stroke: var(--spinner-color);
+        stroke: #1e87f0;
     }
 }

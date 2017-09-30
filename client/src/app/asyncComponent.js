@@ -9,30 +9,21 @@ export default (loader, collection) => (
         constructor(props) {
             super(props);
 
-            this.Component = null;
-            this.state = { Component: AsyncComponent.Component };
+            this.state = { component: this.component || null };
         }
 
         componentWillMount() {
-            if (!this.state.Component) {
-                loader().then((Component) => {
-                    AsyncComponent.Component = Component;
+            if (!this.state.component) {
+                loader().then((component) => {
+                    this.component = component;
 
-                    this.setState({ Component });
+                    this.setState({ component });
                 });
             }
         }
 
         render() {
-            if (this.state.Component) {
-                return (
-                    <this.state.Component { ...this.props } { ...collection } />
-                )
-            } else {
-                return <ViewLoading />
-            }
-
-            return null;
+            return this.state.component ? <this.state.component { ...this.props } { ...collection } /> : <ViewLoading />;
         }
     }
 );
