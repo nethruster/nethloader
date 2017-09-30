@@ -1,6 +1,14 @@
 :local {
+    body {
+        // This is already declared in reset but we need it here too in case we show the loader before we load the base styles.
+        margin: 0;
+    }
+
     .loading {
         width: 100vw;
         height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
