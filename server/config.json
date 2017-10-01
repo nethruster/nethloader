@@ -1,6 +1,13 @@
 {
   "development": {
     "port": 4000,
+    "cors": {
+      "enabled": true,
+      "options": {
+        // See cors module documentation on https://www.npmjs.com/package/cors
+        "origin": true
+      }
+    },
     "jwt-key": "abc123456",
     "database": {
       "username": "root",

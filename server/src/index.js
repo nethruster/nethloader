@@ -9,6 +9,11 @@ const schema = require('./graphql/schema');
 
 const app = express();
 
+if(config.cors.enabled) {
+  const cors = require('cors');
+  app.use(cors(config.cors.options));
+}
+
 app.use('/graphql', authenticationMiddleware);
 
 app.use('/graphql', graphqlHTTP(req => ({
