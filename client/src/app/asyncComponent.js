@@ -9,14 +9,12 @@ export default (loader, collection) => (
         constructor(props) {
             super(props);
 
-            this.state = { component: this.component || null };
+            this.state = { component: null };
         }
 
         componentWillMount() {
             if (!this.state.component) {
                 loader().then((component) => {
-                    this.component = component;
-
                     this.setState({ component });
                 });
             }

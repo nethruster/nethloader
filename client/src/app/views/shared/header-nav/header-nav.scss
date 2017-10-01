@@ -3,16 +3,18 @@
         background: var(--bg-blue-gradient);
         height: 70px;
         padding: 0 calc(var(--base-pm) * 5);
-    }
 
-    .headerNavLogo {
-        max-width: 25px;
-        margin: 0;
-    }
+        &Logo {
+            max-width: 22px;
+            margin: 0;
 
-    .headerNavLogoTitle {
-        font-size: 24px;
-        color: #fff;
-        margin: 0 var(--base-pm);
+            &Title {
+                font-size: 20px;
+                font-weight: 300;
+                color: #fff;
+                margin: 0 var(--base-pm);
+            }
+
+        }
     }
 }

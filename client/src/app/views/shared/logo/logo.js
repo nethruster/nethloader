@@ -3,7 +3,7 @@ import { h, Component } from 'preact';
 import style from './logo.scss';
 
 // Notice me file-loader (●´ω｀●)
-import svgLogo from '../../../../assets/img/logo.svg';
+import '../../../../assets/img/logo.svg';
 
 export default class Logo extends Component {
     render() {

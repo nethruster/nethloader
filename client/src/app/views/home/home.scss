@@ -19,9 +19,11 @@
             width: 100%;
             max-width: 350px;
         }
-    }
 
-    .homeLogo { height: 220px; }
+        &Logo {
+            height: 220px;
+        }
+    }
 
     @media (max-width: 640px) {
         br { display: none; }
