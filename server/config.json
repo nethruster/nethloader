@@ -4,7 +4,6 @@
     "cors": {
       "enabled": true,
       "options": {
-        // See cors module documentation on https://www.npmjs.com/package/cors
         "origin": true
       }
     },
