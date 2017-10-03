@@ -11,7 +11,7 @@ const login = async function (email, password) {
   return await fetch(apiBaseUrl, {
     method: 'post',
     body: JSON.stringify({
-    query: `mutation{ login(email: "${/* Here hoes form email */''}", password: "${/* Here hoes form password */''}") }`
+    query: `mutation{ login(email: "${email}", password: "${password}") }`
     }),
     headers: {
       'accept': 'application/json',
