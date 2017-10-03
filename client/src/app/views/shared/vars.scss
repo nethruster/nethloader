@@ -1,6 +1,7 @@
 :global {
     :root {
         --base-pm: 8px;
+        --base-br: 4px;
         --bg-blue-gradient: linear-gradient(to left top, #28a5f5, #1e87f0) 0 0 no-repeat;
         --bg-shapes-layer: url(../assets/img/section-background.svg) 50% 17vh no-repeat;
         --blue-bg-text-color: rgba(255, 255, 255, 0.8);
@@ -25,7 +26,6 @@
         --input-border-color-default--focus: #1e87f0;
         --input-border-color-default--valid: #00c853;
 
-        --media-view-image-background-color: #f8f8f8;
-        --media-view-image-border-color: #e5e5e5;
+        --media-view-image-background-color: transparentize(#f8f8f8, .25);
     }
 }

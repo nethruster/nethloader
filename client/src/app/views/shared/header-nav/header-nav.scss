@@ -1,18 +1,23 @@
 :local {
     .headerNav {
-        background: var(--bg-blue-gradient);
         height: 70px;
+
+        background: var(--bg-blue-gradient);
+        
         padding: 0 calc(var(--base-pm) * 5);
+        margin-bottom: calc(var(--base-pm) * 4);
 
         &Logo {
             max-width: 22px;
             margin: 0;
 
             &Title {
+                color: #fff;
+
+                margin: 0 var(--base-pm);
+
                 font-size: 20px;
                 font-weight: 300;
-                color: #fff;
-                margin: 0 var(--base-pm);
             }
 
         }
