@@ -2,8 +2,32 @@
     .mediaView {
         flex: 1;
 
+        &Wrapper {
+            width: 50%;
+        }
+
+        &Info {
+            background-color: var(--media-view-image-background-color);
+            margin: var(--base-pm) 0;
+            font-size: .7em;
+            width: 100%;
+
+            p {
+                margin: var(--base-pm);
+                text-align: center;
+            }
+        }
+
+        &Buttons {
+            flex: 1;
+
+            button {
+                margin: var(--base-pm);
+                flex: 1;
+            }
+        }
+
         &Image {
-            max-width: 950px;
             padding: var(--base-pm);
             background-color: var(--media-view-image-background-color);
             border: 0 solid var(--media-view-image-border-color);

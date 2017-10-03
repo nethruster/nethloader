@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { Switch, Route } from 'react-router-dom';
 
-import asyncComponent from '../../../asyncComponent.js';
+import asyncComponent from 'asyncComponent';
 import HeaderNav from '../header-nav/header-nav.js';
 
 import style from './content.scss';

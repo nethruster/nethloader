@@ -1,12 +1,13 @@
 root = true
 
 [*]
-indent_style = space
 end_of_line = lf
-charset = utf-8
-trim_trailing_whitespace = true
 insert_final_newline = true
-
-[{package.json}]
 indent_style = space
+tab_width = 4
+indent_size = 4
+charset = utf-8
+
+[*.{js,jsx,json}]
+tab_width = 2
 indent_size = 2

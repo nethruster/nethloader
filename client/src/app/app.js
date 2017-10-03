@@ -1,7 +1,7 @@
 import { h, Component } from 'preact';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import asyncComponent from './asyncComponent.js';
+import asyncComponent from 'asyncComponent';
 
 import style from './app.scss';
 

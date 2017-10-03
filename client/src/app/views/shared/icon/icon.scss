@@ -3,5 +3,8 @@
         width: 24px;
         height: auto;
         fill: currentColor;
+        vertical-align: middle
     }
+
+    svg:not(:root) { overflow: hidden; }
 }

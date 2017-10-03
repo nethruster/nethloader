@@ -14,7 +14,8 @@ module.exports = {
         'vendor': [
             'preact',
             'preact-compat',
-            'react-router-dom'
+            'react-router-dom',
+            'app.config'
         ]
     },
     output: {
@@ -61,7 +62,11 @@ module.exports = {
         alias: {
             'react': 'preact-compat',
             'react-dom': 'preact-compat'
-        }
+        },
+        modules: [
+            APP_DIR,
+            "node_modules"
+        ]
     },
     plugins: [
         isProduction ? new CompressionPlugin({
