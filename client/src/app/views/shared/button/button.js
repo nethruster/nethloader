@@ -17,8 +17,7 @@ export default class Button extends Component {
                         flex flex-full-center` }
                 tabindex="0">
                 { this.props.icon ? <Icon iconName={this.props.icon} /> : null }&nbsp;
-                { this.props.text }&nbsp;
-                { this.props.spinner ? <Spinner color={this.props.spinnerColor} size={this.props.spinnerSize} /> : null }
+                { this.props.spinner ? <Spinner color={this.props.spinnerColor} size={this.props.spinnerSize} /> : this.props.text }&nbsp;
             </button>
         );
     }

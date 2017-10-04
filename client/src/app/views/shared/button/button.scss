@@ -18,6 +18,10 @@
         transition-property: color, background-color, border-color;
         cursor: pointer;
 
+        &:hover {
+            svg { color: var(--button-text-color-default--hover); } 
+        }
+
         &Round { border-radius: 500px; }
 
         &Contrast {
