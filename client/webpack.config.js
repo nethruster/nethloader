@@ -69,24 +69,24 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('development')
+            }
+        }),
         isProduction ? new CompressionPlugin({
             algorithm: "gzip",
             test: /\.(js|css|json|svg|png|jpeg)$/,
             minRatio: 0.8
         }) : new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.optimize.CommonsChunkPlugin("vendor"),
         new HtmlWebpackPlugin({
             minify: {
                 collapseWhitespace: true
             },
             hash: true,
             template: APP_DIR + '/index.html'
-        }),
-        new webpack.DefinePlugin({
-            'process.env': {
-                'NODE_ENV': isProduction ? JSON.stringify('production') : JSON.stringify('development')
-            }
-        }),
-        new webpack.optimize.CommonsChunkPlugin("vendor")
+        })
     ]
 };
