@@ -1,5 +1,4 @@
 import { h, render } from 'preact';
-import { initDevTools } from 'preact/devtools';
 
 import asyncComponent from 'asyncComponent';
 
