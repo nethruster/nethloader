@@ -20,6 +20,7 @@
         background-color: var(--input-bg-color--default);
         color: var(--input-text-color-default);
         border: 1px solid var(--input-border-color-default);
+        border-radius: var(--base-br);
 
         transition: .2s ease-in-out;
         transition-property: color, background-color, border;

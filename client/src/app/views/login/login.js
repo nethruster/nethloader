@@ -10,7 +10,7 @@ export default class Login extends Component {
   render () {
     return (
       <div class={`${style.login} flex flex-full-center flex-dc`}>
-        <div class='paper paper-small paper-padding paper-shadow-1 flex flex-dc flex-full-center'>
+        <div class='paper paper-small paper-padding flex flex-dc flex-full-center'>
           <h1 class='ta-c'>Login</h1>
           <LoginForm />
           <div class={`${style.loginAltLinks} flex flex-cross-center flex-sb`}>

@@ -5,7 +5,8 @@
 
         background-color: var(--button-bg-color-default);
         color: var(--button-text-color-default);
-        border: 1px solid #e5e5e5;
+        border: 1px solid var(--button-border-color-default);
+        border-radius: var(--base-br);
 
         padding: var(--base-pm) calc(var(--base-pm) * 4);
         margin: calc(var(--base-pm) * 3) 0;
