@@ -1,34 +1,35 @@
-import jwtDecode from 'jwt-decode';
+import jwtDecode from 'jwt-decode'
 
-import { apiBaseUrl } from 'app.config';
+import { apiBaseUrl } from 'app.config'
 
 const requestLogin = async function (email, password) {
   // Remove possible whitespace on the email
-  email = email.trim();
+  email = email.trim()
 
   // RegEx to make sure that the email is valid
-  let emailExp = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+  let emailExp = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
 
-  if(!email) {
+  if (!email) {
     // Check if email is empty
-    throw Error('no_email');
-  } else if(!emailExp.test(email)) {
+    throw Error('no_email')
+  } else if (!emailExp.test(email)) {
     // Check if email is valid
-    throw Error('invalid_email');
-  } else if(!password) {
+    throw Error('invalid_email')
+  } else if (!password) {
     // Chack if there's a password
-    throw Error('no_password');
+    throw Error('no_password')
   } else {
     // Any error trown from here on down will be passed upwards and catched in the login-form component to represent it correctly
-    return await login(email, password);
+    let loginResponse = await login(email, password)
+    return loginResponse
   }
 }
 
 const login = async function (email, password) {
-  return await fetch(apiBaseUrl, {
+  await fetch(apiBaseUrl, {
     method: 'post',
     body: JSON.stringify({
-    query: `mutation{ login(email: "${email}", password: "${password}") }`
+      query: `mutation{ login(email: "${email}", password: "${password}") }`
     }),
     headers: {
       'accept': 'application/json',
@@ -36,12 +37,12 @@ const login = async function (email, password) {
     }
   }).then(async (response) => {
     if (response.status >= 200 && response.status < 300) {
-      let token = (await response.json()).data.login;
-      return jwtDecode(token);
+      let token = (await response.json()).data.login
+      return jwtDecode(token)
     } else {
-      throw Error(response.status);
+      throw Error(response.status)
     }
-  });
+  })
 }
 
 export {

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack -p",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "test": "standard 'src/**/*.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,12 @@
     "url": "https://github.com/nethruster/nethloader/issues"
   },
   "homepage": "https://github.com/nethruster/nethloader#readme",
+  "standard": {
+    "globals": ["fetch"],
+    "ignore": [
+      "node_modules/**"
+    ]
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",
@@ -33,6 +40,7 @@
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
+    "standard": "^10.0.3",
     "style-loader": "^0.18.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"
