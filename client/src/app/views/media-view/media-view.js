@@ -1,25 +1,17 @@
 import { h, Component } from 'preact'
 
-import Button from '../shared/button/button.js'
+import MediaItem from './media-item/media-item.js'
+import MediaInfo from './media-info/media-info.js'
 
 import style from './media-view.scss'
 
 export default class MediaView extends Component {
-  render ({ match }) {
-    const testUrl = ''
+  render () {
     return (
       <div class={`${style.mediaView} flex flex-full-center`}>
         <div class={`${style.mediaViewWrapper} flex flex-dc flex-full-center`}>
-          <div class={style.mediaViewImage}>
-            <img src={testUrl} />
-          </div>
-          <div class={`${style.mediaViewInfo} flex flex-dc`}>
-            <div class={`${style.mediaViewButtons} flex flex-sa`}>
-              <a href={testUrl} target='_blank' rel='noopener'><Button text='View original' small icon='fullscreen' /></a>
-              <a href={testUrl} download rel='noopener'><Button text='Download' small icon='download' /></a>
-            </div>
-            <p>Image info</p>
-          </div>
+          <MediaItem />
+          <MediaInfo />
         </div>
       </div>
     )

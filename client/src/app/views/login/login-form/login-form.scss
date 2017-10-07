@@ -1,3 +1,11 @@
 :local {
-    .form { width: 70%; }
+    .form { 
+        width: 70%; 
+        
+        &ValidationText {
+            font-size: .8em;
+            color: var(--formValidationTextErrorColor);
+            min-height: 20px;
+        }
+    }
 }

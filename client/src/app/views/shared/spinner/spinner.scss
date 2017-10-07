@@ -30,6 +30,6 @@
         animation: spinner-dash 1.4s ease-in-out infinite;
         stroke-width: 1;
         stroke-linecap: round;
-        stroke: #1e87f0;
+        stroke: var(--loadingSpinnerColor);
     }
 }

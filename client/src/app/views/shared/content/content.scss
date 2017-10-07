@@ -1,7 +1,7 @@
 :local {
     .content {
         min-height: 100vh;
-        
-        background-image: linear-gradient(to top, #e6e9f0, #eef1f5 0 0 no-repeat);
+
+        background-image: var(--content-background-gradient);
     }
 }

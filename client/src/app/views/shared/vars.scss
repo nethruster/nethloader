@@ -6,8 +6,16 @@
         --bg-shapes-layer: url(../assets/img/section-background.svg) 50% 17vh no-repeat;
         --blue-bg-text-color: rgba(255, 255, 255, 0.8);
 
+        --content-background-gradient: linear-gradient(to top, #e6e9f0, #eef1f5 0 0 no-repeat);
+
+        --loadingSpinnerColor: #1e87f0;
+
+        --headerNavLogoColor: #fff;
+
         --paper-background-color: #fff;
         --paper-text-color: #222;
+
+        --formValidationTextErrorColor: #D50000;
 
         --button-bg-color-default: transparent;
         --button-text-color-default: #222;
@@ -26,7 +34,8 @@
         --input-border-color-default: #e5e5e5;
         --input-border-color-default--focus: #1e87f0;
         --input-border-color-default--valid: #00c853;
-
+        
         --media-view-image-background-color: transparentize(#f8f8f8, .25);
+        
     }
 }

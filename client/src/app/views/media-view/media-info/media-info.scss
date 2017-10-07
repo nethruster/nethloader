@@ -1,0 +1,28 @@
+:local {
+    .mediaInfo {
+        margin: calc(var(--base-pm) * 2) 0;
+
+        font-size: .75em;
+
+        p {
+            margin: var(--base-pm);
+
+            text-align: center;
+        }
+
+        &Buttons {
+            flex: 1;
+
+            a {
+                flex: 1;
+                display: block;
+                
+                margin: var(--base-pm);
+            }
+
+            button {
+                margin: calc(var(--base-pm) / 2) 0;
+            }
+        }
+    }
+}
