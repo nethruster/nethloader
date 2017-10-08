@@ -1,9 +1,9 @@
 import { h, Component } from 'preact'
 import { NavLink } from 'react-router-dom'
 
-import { version } from '../../../../../package.json'
-
 import Icon from '../icon/icon.js'
+
+import { version } from 'app.config'
 
 import style from './footer.scss'
 

@@ -8,6 +8,10 @@ import style from './login-form.scss'
 
 import { requestLogin } from '../../../utils/login/login-manager.js'
 
+import locale from 'locale'
+
+const viewStrings = locale.login.form
+
 export default withRouter(class LoginForm extends Component {
   constructor (props) {
     super(props)
@@ -24,7 +28,10 @@ export default withRouter(class LoginForm extends Component {
   }
 
   handleChange (event) {
-    this.setState({ [event.target.id]: event.target.value })
+    this.setState({
+      [event.target.id]: event.target.value,
+      formValidationText: ''
+    })
   }
 
   async handleSubmit (event) {
@@ -50,10 +57,10 @@ export default withRouter(class LoginForm extends Component {
   render () {
     return (
       <form class={`${style.form} flex flex-full-center flex-dc`} onSubmit={this.handleSubmit}>
-        <FormInput inputId='email' inputType='email' inputLabel='Email' changeHandler={this.handleChange} required noValidationStyle />
-        <FormInput inputId='password' inputType='password' inputLabel='Password' changeHandler={this.handleChange} required noValidationStyle />
+        <FormInput inputId='email' inputType='email' inputLabel={viewStrings.email} changeHandler={this.handleChange} required noValidationStyle />
+        <FormInput inputId='password' inputType='password' inputLabel={viewStrings.password} changeHandler={this.handleChange} required noValidationStyle />
         <p class={style.formValidationText}>{this.state.formValidationText}</p>
-        <Button contrast text='Login' spinner={this.state.loggingIn} spinnerColor='#fff' spinnerSize='14' />
+        <Button contrast text={viewStrings.login} spinner={this.state.loggingIn} spinnerColor='#fff' spinnerSize='14' />
       </form>
     )
   }

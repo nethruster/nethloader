@@ -7,11 +7,14 @@
         color: var(--blue-bg-text-color);
 
         &Text {
+            max-width: 380px;
             font-size: 1.5em;
             font-weight: 300;
 
             margin-bottom: calc(var(--base-pm) * 2);
             padding: var(--base-pm);
+
+            text-align: center;
         }
 
         &Buttons {
@@ -23,9 +26,5 @@
         &Logo {
             height: 220px;
         }
-    }
-
-    @media (max-width: 640px) {
-        br { display: none; }
     }
 }

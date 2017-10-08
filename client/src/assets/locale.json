@@ -1,0 +1,19 @@
+{
+  "home": {
+    "intro": "This domain is using Nethloader, a self hosted media sharing service.",
+    "buttons": {
+      "more_info": "More Info",
+      "source_code": "Github"
+    }
+  },
+  "login": {
+    "title": "Login",
+    "form": {
+      "email": "Email",
+      "password": "Password",
+      "login": "Login"
+    },
+    "forgot_password": "I forgot my password",
+    "not_registered": "I don't have an account"
+  }
+}

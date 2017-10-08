@@ -15,7 +15,8 @@ module.exports = {
       'preact',
       'preact-compat',
       'react-router-dom',
-      'app.config'
+      'app.config',
+      'locale'
     ]
   },
   output: {
@@ -64,7 +65,7 @@ module.exports = {
       'react-dom': 'preact-compat'
     },
     modules: [
-      APP_DIR,
+      APP_DIR + '/assets/',
       'node_modules'
     ]
   },
