@@ -5,7 +5,7 @@ import style from './header-nav.scss'
 export default class HeaderNav extends Component {
   render () {
     return (
-      <div class={`${style.headerNav} flex flex-cross-center`} />
+      <header class={`${style.headerNav} flex flex-cross-center`} role='menubar' />
     )
   }
 }

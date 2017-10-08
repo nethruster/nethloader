@@ -11,8 +11,8 @@ export default class MediaInfo extends Component {
     return (
       <div class={`paper paper-small ${style.mediaInfo} flex flex-dc`}>
         <div class={`${style.mediaInfoButtons} flex flex-sa`}>
-          <a href={testUrl} target='_blank' rel='noopener'><Button text='View original' small icon='fullscreen' /></a>
-          <a href={testUrl} download rel='noopener'><Button text='Download' small icon='download' /></a>
+          <a href={testUrl} target='_blank' rel='noopener' title='Open original image in a new tab'><Button text='View original' small tabindex='-1' icon='fullscreen' /></a>
+          <a href={testUrl} download rel='noopener' title='Download image'><Button text='Download' small tabindex='-1' icon='download' /></a>
         </div>
         <p>Image info</p>
       </div>

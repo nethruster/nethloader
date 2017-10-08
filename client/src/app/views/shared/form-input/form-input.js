@@ -12,7 +12,8 @@ export default class FormInput extends Component {
           placeholder={this.props.inputLabel}
           required={this.props.required}
           onInput={this.props.changeHandler}
-          noValidationStyle={this.props.noValidationStyle} />
+          noValidationStyle={this.props.noValidationStyle}
+          title={this.props.inputLabel} />
       </div>
     )
   }

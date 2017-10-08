@@ -13,19 +13,19 @@ export default class App extends Component {
                     <Route
                         exact
                         path='/'
-                        component={ asyncComponent(() => import(/* webpackChunkName: "home" */'./views/home/home.js')
-                                    .then(module => module.default)) } />
+                        component={asyncComponent(() => import(/* webpackChunkName: "home" */'./views/home/home.js')
+                                    .then(module => module.default))} />
 
                     <Route
                         exact
                         path='/login'
-                        component={ asyncComponent(() => import(/* webpackChunkName: "login" */'./views/login/login.js')
-                                    .then(module => module.default)) } />
+                        component={asyncComponent(() => import(/* webpackChunkName: "login" */'./views/login/login.js')
+                                    .then(module => module.default))} />
 
                     <Route
                         path='/:id'
-                        component={ asyncComponent(() => import(/* webpackChunkName: "content" */'./views/shared/content/content.js')
-                                    .then(module => module.default)) } />
+                        component={asyncComponent(() => import(/* webpackChunkName: "content" */'./views/shared/content/content.js')
+                                    .then(module => module.default))} />
                 </Switch>
             </BrowserRouter>
         );
