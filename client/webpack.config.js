@@ -66,6 +66,7 @@ module.exports = {
     },
     modules: [
       APP_DIR + '/assets/',
+      APP_DIR + '/utils/',
       'node_modules'
     ]
   },
