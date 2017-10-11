@@ -6,7 +6,7 @@ import Button from '../../shared/button/button.js'
 
 import style from './login-form.scss'
 
-import { requestLogin } from '../../../utils/login/login-manager.js'
+import { requestLogin } from 'login/login-manager'
 
 import locale from 'locale'
 
