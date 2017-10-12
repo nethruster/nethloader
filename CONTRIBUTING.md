@@ -1,7 +1,7 @@
 Before contributing any code, please consider the following guide
 -
 Client Side
-=
+-
 Nethloader's client side is formed by a bunch of as self-contained as possible preact(react) components which are organized by views.
 
 These are the main directives to consider for the project:
