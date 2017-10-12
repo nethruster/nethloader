@@ -8,6 +8,8 @@
 
         --content-background-gradient: linear-gradient(to top, #e6e9f0, #eef1f5 0 0 no-repeat);
 
+        --content-max-width: 1300px;
+
         --loadingSpinnerColor: #1e87f0;
 
         --headerNavLogoColor: #fff;
@@ -37,6 +39,5 @@
         --input-border-color-default--valid: #00c853;
         
         --media-view-card-background-color: transparentize(#f8f8f8, .25);
-        
     }
 }

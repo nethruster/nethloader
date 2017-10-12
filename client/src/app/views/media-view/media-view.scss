@@ -2,9 +2,11 @@
     .mediaView {
         flex: 1;
 
+        margin-top: calc(var(--base-pm) * 4);
+
         &Wrapper {
             width: 100%;
-            max-width: 1200px;
+            max-width: var(--content-max-width);
         }
     }
 }

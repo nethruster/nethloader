@@ -7,11 +7,15 @@ import HeaderNav from '../header-nav/header-nav.js'
 import style from './content.scss'
 
 export default class Content extends Component {
-  render() {
+  render () {
     return (
       <div class={`${style.content} flex flex-dc`} role='main'>
         <HeaderNav />
         <Switch>
+        <Route
+            path='/cp'
+            component={asyncComponent(() => import(/* webpackChunkName: "content_cp" */'../../cp/cp.js')
+              .then(module => module.default))} />
           <Route
             path='/:id'
             component={asyncComponent(() => import(/* webpackChunkName: "content_media-view" */'../../media-view/media-view.js')

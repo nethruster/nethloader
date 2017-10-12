@@ -1,0 +1,32 @@
+:local {
+    .cpsubheader {
+        width: 100%;
+        border-bottom: 1px solid #e1e4e8;
+
+        &Wrapper {
+            width: 100%;
+            max-width: var(--content-max-width);
+        }
+    
+        &UserStats {
+            font-size: .85em;
+            flex: 6;
+        }
+
+        &Tabs {
+            flex: 2;
+            height: 100%;
+
+            nav {
+                flex: 1;
+                height: 100%;
+            }
+
+            a {
+                cursor: pointer;
+                height: 100%;
+            }
+        }
+    }
+    
+}

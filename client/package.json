@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "dev": "webpack-dev-server",
-    "test": "standard 'src/**/*.js"
+    "linter": "standard 'src/**/*.js"
   },
   "repository": {
     "type": "git",
