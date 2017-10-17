@@ -1,0 +1,8 @@
+[submodule "server"]
+	path = server
+	url = https://github.com/nethruster/nethloader-backend.git
+	branch = master
+[submodule "client"]
+	path = client
+	url = https://github.com/nethruster/nethloader-frontend.git
+	branch = master
