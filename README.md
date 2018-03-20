@@ -7,9 +7,11 @@
 
 - Lightweigh and fast
 - Functional and pretty UI
-- Easy to install
-- Public upload endpoint
+- Drag n' drop web UI upload
 - Dark mode
+- Easy to install
+- Multiple users
+- Public upload endpoint
 
 💁 [**Demo**](#) (Coming soon)
 
