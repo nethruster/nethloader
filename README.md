@@ -11,6 +11,7 @@
 - Dark mode
 - Easy to install
 - Multiple users
+- ShareX compatibility
 - Public upload endpoint
 
 💁 [**Demo**](#) (Coming soon)
