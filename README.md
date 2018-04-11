@@ -19,25 +19,25 @@
 <details><summary>Screenshots</summary><p>
     
 Public home
-<img src="https://i.nth.sh/media/omkhL_HG9E.png" alt="Public home" />
+<img src="https://www.nethruster.com/nethloader_presentation/home.png" alt="Public home" />
     
 Media view
-<img src="https://i.nth.sh/media/GCloZrzH8n.png" alt="Media View" />
+<img src="https://www.nethruster.com/nethloader_presentation/image_view.png" alt="Media View" />
 
 Upload on web UI
-<img src="https://i.nth.sh/media/AG7dLbiWnt.png" alt="Upload on web UI" />
+<img src="https://www.nethruster.com/nethloader_presentation/upload_modal.png" alt="Upload on web UI" />
     
 User control panel
-<img src="https://i.nth.sh/media/q7m4y0~EXw.png" alt="User control panel" />
+<img src="https://www.nethruster.com/nethloader_presentation/user_panel.png" alt="User control panel" />
 
 User settings
-<img src="https://i.nth.sh/media/cMQd0qTARB.png" alt="User settings" />
+<img src="https://www.nethruster.com/nethloader_presentation/user_panel_settings.png" alt="User settings" />
 
 Admin panel
-<img src="https://i.nth.sh/media/dsXAEC9~Eg.png" alt="Admin panel" />
+<img src="https://www.nethruster.com/nethloader_presentation/admin_view.png" alt="Admin panel" />
 
 Dark mode
-<img src="https://i.nth.sh/media/dAlcEoN41c.png" alt="Dark mode" />
+<img src="https://www.nethruster.com/nethloader_presentation/dark_mode.png" alt="Dark mode" />
 
 </p></details>
 
