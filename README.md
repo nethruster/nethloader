@@ -14,7 +14,7 @@
 - ShareX compatibility
 - Public upload endpoint
 
-💁 [**Demo**](https://nethloader.nethruster.com) ( *username*: <b>demo</b>, *password*: <b>demo</b> )
+💁 [**Demo**](https://nethloader.nethruster.com) ( *username*: <b>demo@demo.com</b>, *password*: <b>demo</b> )
 
 <details><summary>Screenshots</summary><p>
     
