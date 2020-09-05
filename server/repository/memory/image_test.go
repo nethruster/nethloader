@@ -1,6 +1,8 @@
 package memory
 
 import (
+	"github.com/stretchr/testify/require"
+	"strconv"
 	"testing"
 
 	"github.com/nethruster/nethloader/server/domain"
@@ -27,7 +29,7 @@ func TestStoreImageTwice(t *testing.T) {
 		Format: domain.ImageFormatJPEG,
 	}
 	err := repo.Store(&img)
-	assert.NoError(t, err)
+	require.NoError(t, err)
 
 	err = repo.Store(&img)
 	assert.EqualError(t, err, domain.ErrDuplicatedImageID.Error())
@@ -58,11 +60,13 @@ func TestStoreThenGet(t *testing.T) {
 	repo := NewImageRepository()
 
 	for i, image := range images {
-		err := repo.Store(&image)
-		assert.NoErrorf(t, err, "case %d", i)
+		t.Run(strconv.Itoa(i), func(t *testing.T) {
+			err := repo.Store(&image)
+			require.NoError(t, err)
 
-		img, err := repo.Get(image.ID)
-		assert.NoErrorf(t, err, "case %d", i)
-		assert.Equalf(t, &image, img, "case %d", i)
+			img, err := repo.Get(image.ID)
+			require.NoError(t, err)
+			assert.Equal(t, &image, img)
+		})
 	}
 }

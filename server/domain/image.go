@@ -25,6 +25,10 @@ type ImageService interface {
 	Create(ownerID string, encodedImageReader io.Reader) (*Image, error)
 }
 
+type ImageCompressorService interface {
+	Compress(format int, reader io.Reader) (io.Reader, error)
+}
+
 type ImageRepository interface {
 	Get(id string) (*Image, error)
 	Store(image *Image) error

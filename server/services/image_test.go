@@ -3,22 +3,21 @@ package services
 import (
 	"bytes"
 	"errors"
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
+	"strconv"
 	"testing"
 
 	"github.com/nethruster/nethloader/server/domain"
 	"github.com/nethruster/nethloader/server/repository/memory"
-	"github.com/stretchr/testify/assert"
 )
 
 var (
-	myImage = domain.Image{
-		ID: "image1",
-	}
 	jpegExample = []byte{0xFF, 0xD8, 0xFF, 0xDB}
 )
 
 func TestImplementsImageServiceInterface(t *testing.T) {
-	var _ domain.ImageService = Image{}
+	var _ domain.ImageService = &Image{}
 }
 
 func TestCreateWithInvalidEncoding(t *testing.T) {
@@ -30,11 +29,13 @@ func TestCreateWithInvalidEncoding(t *testing.T) {
 	}
 	filler := make([]byte, 64)
 	for i, enc := range encodings {
-		enc = append(enc, filler...)
-		_, err := service.Create("user1", bytes.NewReader(enc))
-		if !errors.Is(err, domain.ErrInvalidImageEncoding) {
-			t.Errorf("case %d: expected error ErrInvalidImageEncoding, got: %v", i, err)
-		}
+		t.Run(strconv.Itoa(i), func(t *testing.T) {
+			enc = append(enc, filler...)
+			_, err := service.Create("user1", bytes.NewReader(enc))
+			if !errors.Is(err, domain.ErrInvalidImageEncoding) {
+				t.Errorf("expected error ErrInvalidImageEncoding, got: %v", err)
+			}
+		})
 	}
 }
 
@@ -68,10 +69,12 @@ func TestCreateWithValidEncoding(t *testing.T) {
 	}
 	filler := make([]byte, 64)
 	for i, c := range encodings {
-		c.encodedFile = append(c.encodedFile, filler...)
-		img, err := service.Create("user1", bytes.NewReader(c.encodedFile))
-		assert.NoErrorf(t, err, "encoding in position %d", i)
-		assert.Equalf(t, c.format, img.Format, "case %d", i)
+		t.Run(strconv.Itoa(i), func(t *testing.T) {
+			c.encodedFile = append(c.encodedFile, filler...)
+			img, err := service.Create("user1", bytes.NewReader(c.encodedFile))
+			require.NoError(t, err)
+			assert.Equal(t, c.format, img.Format)
+		})
 	}
 }
 
@@ -85,10 +88,10 @@ func TestCreateWithoutOwnerID(t *testing.T) {
 func TestCreateAndGet(t *testing.T) {
 	service := newService()
 	img, err := service.Create("user1", bytes.NewReader(append(jpegExample, make([]byte, 64)...)))
-	assert.NoError(t, err)
-	assert.NotNil(t, img)
+	require.NoError(t, err)
+	require.NotNil(t, img)
 	img2, err := service.Get(img.ID)
-	assert.NoError(t, err)
+	require.NoError(t, err)
 
 	assert.Equal(t, img, img2)
 }
@@ -96,8 +99,8 @@ func TestCreateAndGet(t *testing.T) {
 func TestCreateSavesToFileStorage(t *testing.T) {
 	service := newService()
 	img, err := service.Create("user1", bytes.NewReader(append(jpegExample, make([]byte, 64)...)))
-	assert.NoError(t, err)
-	assert.NotNil(t, img)
+	require.NoError(t, err)
+	require.NotNil(t, img)
 
 	_, err = service.fileRepo.Get("user1/" + img.ID + ".jpg")
 	assert.NoError(t, err)
