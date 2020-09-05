@@ -2,6 +2,7 @@ package domain
 
 import (
 	"errors"
+	"io"
 	"time"
 )
 
@@ -20,6 +21,8 @@ type Image struct {
 }
 
 type ImageService interface {
+	Get(id string) (*Image, error)
+	Create(ownerID string, encodedImageReader io.Reader) (*Image, error)
 }
 
 type ImageRepository interface {
