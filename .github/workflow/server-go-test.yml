@@ -1,0 +1,33 @@
+name: Server Go test
+
+on:
+  push:
+    paths:
+    - 'server/**'
+  pull_request:
+    paths:
+    - 'server/**'
+
+jobs:
+  test:
+    name: Go test
+    runs-on: ubuntu-latest
+    env:
+      server-code-directory: ./server
+    steps:
+    - name: Set up Go 1.x
+      uses: actions/setup-go@v2
+      with:
+        go-version: ^1.15
+      id: go
+
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Download
+      run: go mod download
+      working-directory: ${{env.server-code-directory}}
+      
+    - name: Run tests
+      run: go test -v ./...
+      working-directory: ${{env.server-code-directory}}
