@@ -3,10 +3,11 @@ package services
 import (
 	"bytes"
 	"errors"
-	"github.com/stretchr/testify/assert"
-	"github.com/stretchr/testify/require"
 	"strconv"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 
 	"github.com/nethruster/nethloader/server/domain"
 	"github.com/nethruster/nethloader/server/repository/memory"

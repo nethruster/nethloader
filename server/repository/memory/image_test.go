@@ -1,9 +1,10 @@
 package memory
 
 import (
-	"github.com/stretchr/testify/require"
 	"strconv"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 
 	"github.com/nethruster/nethloader/server/domain"
 	"github.com/stretchr/testify/assert"

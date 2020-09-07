@@ -2,12 +2,13 @@ package fs
 
 import (
 	"fmt"
-	"github.com/stretchr/testify/require"
 	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 
 	"github.com/nethruster/nethloader/server/pkg/file"
 	"github.com/stretchr/testify/assert"
