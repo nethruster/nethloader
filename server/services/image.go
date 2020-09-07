@@ -12,20 +12,29 @@ import (
 )
 
 type Image struct {
-	fileRepo  file.Repository
-	imageRepo domain.ImageRepository
+	allowCompression  bool
+	forceCompression  bool
+	compressorService domain.ImageCompressorService
+	fileRepo          file.Repository
+	imageRepo         domain.ImageRepository
 }
 
-func NewImage(fileRepo file.Repository, imageRepo domain.ImageRepository) *Image {
+func NewImage(allowCompression bool, forceCompression bool, compressorService domain.ImageCompressorService, imageRepo domain.ImageRepository, fileRepo file.Repository) *Image {
 	if fileRepo == nil {
 		panic("no file repository provided")
 	}
 	if imageRepo == nil {
 		panic("no image repository provided")
 	}
+	if allowCompression && compressorService == nil {
+		panic("compression enabled but no compressor service provided")
+	}
 	return &Image{
-		fileRepo:  fileRepo,
-		imageRepo: imageRepo,
+		allowCompression:  allowCompression,
+		forceCompression:  forceCompression,
+		fileRepo:          fileRepo,
+		imageRepo:         imageRepo,
+		compressorService: compressorService,
 	}
 }
 
@@ -33,12 +42,13 @@ func (service *Image) Get(id string) (*domain.Image, error) {
 	return service.imageRepo.Get(id)
 }
 
-func (service *Image) Create(ownerID string, encodedImageReader io.Reader) (*domain.Image, error) {
+func (service *Image) Create(ownerID string, encodedImageReader io.Reader, compress bool) (*domain.Image, error) {
 	if ownerID == "" {
 		return nil, domain.ErrInvalidOwnerID
 	}
-	reader := bufio.NewReaderSize(encodedImageReader, 64*1024)
-	format, err := imageFormatFromMagicNumber(reader)
+	buffer := bufio.NewReaderSize(encodedImageReader, 64*1024)
+	encodedImageReader = buffer
+	format, err := imageFormatFromMagicNumber(buffer)
 	if err != nil {
 		return nil, err
 	}
@@ -54,11 +64,17 @@ func (service *Image) Create(ownerID string, encodedImageReader io.Reader) (*dom
 		Format:    format,
 		OwnerID:   ownerID,
 	}
+	if service.allowCompression && (service.forceCompression || compress) {
+		encodedImageReader, err = service.compressorService.Compress(format, encodedImageReader)
+		if err != nil {
+			return nil, fmt.Errorf("error compressing the image: %w", err)
+		}
+	}
 	err = service.imageRepo.Store(&img)
 	if err != nil {
 		return nil, fmt.Errorf("error saving the image to database: %w", err)
 	}
-	err = service.fileRepo.Store(getFileName(id, format, ownerID), reader)
+	err = service.fileRepo.Store(getFileName(id, format, ownerID), encodedImageReader)
 	if err != nil {
 		return nil, fmt.Errorf("error storing image file: %w", err)
 	}

@@ -22,7 +22,7 @@ type Image struct {
 
 type ImageService interface {
 	Get(id string) (*Image, error)
-	Create(ownerID string, encodedImageReader io.Reader) (*Image, error)
+	Create(ownerID string, encodedImageReader io.Reader, compress bool) (*Image, error)
 }
 
 type ImageCompressorService interface {
